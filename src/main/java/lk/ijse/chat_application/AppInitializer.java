@@ -1,9 +1,10 @@
-package lk.ijse.chat_application.controller;
+package lk.ijse.chat_application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class AppInitializer extends Application {
@@ -13,11 +14,13 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(this.getClass().getResource(""));
+        Parent root = FXMLLoader.load(this.getClass().getResource("/view/loading_window_form.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.centerOnScreen();
+        Image icon = new Image(getClass().getResourceAsStream("/view/img/logo.png"));
+        stage.getIcons().add(icon);
         stage.setTitle("Novo");
         stage.show();
     }
