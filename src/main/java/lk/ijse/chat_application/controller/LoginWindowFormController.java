@@ -5,29 +5,29 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.chat_application.dto.Client;
 
 import java.io.IOException;
 
 public class LoginWindowFormController {
     @FXML
-    private JFXButton btnLogin;
-    @FXML
-    private AnchorPane root;
+    private TextField txtUserName;
 
     @FXML
-    void btnLoginOnAction(ActionEvent event) {
-        AnchorPane anchorPane = null;
+    private JFXButton btnJoin;
+
+    @FXML
+    void btnJoinOnAction(ActionEvent event) {
+        Client client = null;
         try {
-            anchorPane = FXMLLoader.load(getClass().getResource("/view/server_start_form.fxml"));
 
-        Scene scene = new Scene(anchorPane);
+            client = new Client(txtUserName.getText());
 
-        Stage stage = (Stage) root.getScene().getWindow();
-        stage.setScene(scene);
-        stage.setTitle("Chat Novo");
-        stage.centerOnScreen();
+            Thread thread = new Thread(client);
+            thread.start();
         } catch (IOException e) {
             e.printStackTrace();
         }

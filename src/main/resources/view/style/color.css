@@ -1,0 +1,7 @@
+.button {
+   -fx-background-color: linear-gradient(to top right, #00cc99 0%, #00ccff 100%);
+}
+.progress{
+   -fx-progress-color: white;
+
+}
