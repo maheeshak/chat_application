@@ -1,4 +1,4 @@
-package lk.ijse.chat_application.dto;
+package lk.ijse.chat_application.server;
 
 import lk.ijse.chat_application.controller.ClientWindowFormController;
 
