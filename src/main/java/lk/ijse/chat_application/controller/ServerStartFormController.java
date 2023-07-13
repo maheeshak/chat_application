@@ -5,10 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.chat_application.dto.Server;
+import lk.ijse.chat_application.server.Server;
 
 import java.io.IOException;
 
@@ -26,7 +25,7 @@ public class ServerStartFormController {
             Server serverSocket = Server.getServerSocket();
             Thread thread = new Thread(serverSocket);
             thread.start();
-            anchorPane = FXMLLoader.load(getClass().getResource("/view/login_form.fxml"));
+            anchorPane = FXMLLoader.load(getClass().getResource("/view/user_register_window_form.fxml"));
 
             Scene scene = new Scene(anchorPane);
 
