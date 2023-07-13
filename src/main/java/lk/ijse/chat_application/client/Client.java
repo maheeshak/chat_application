@@ -1,4 +1,4 @@
-package lk.ijse.chat_application.dto;
+package lk.ijse.chat_application.client;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
