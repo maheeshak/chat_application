@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -17,7 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import lk.ijse.chat_application.dto.Client;
+import lk.ijse.chat_application.client.Client;
 
 import java.io.*;
 import java.net.URL;
@@ -85,7 +84,7 @@ public class ClientWindowFormController implements Initializable {
     void btnSendOnAction(ActionEvent event) {
         try {
             String text = txtMsgArea.getText();
-            if (text != null) {
+            if (!text.equals("")) {
                 appendText(text);
                 client.sendMessage(text);
                 txtMsgArea.clear();
