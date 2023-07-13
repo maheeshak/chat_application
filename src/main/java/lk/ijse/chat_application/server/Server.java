@@ -1,9 +1,8 @@
-package lk.ijse.chat_application.dto;
+package lk.ijse.chat_application.server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.security.PrivateKey;
 
 public class Server implements Runnable {
     //implementing singleton design pattern to avoid creating servers...
@@ -27,7 +26,7 @@ public class Server implements Runnable {
         while(!serverSocket.isClosed()){
             System.out.println(("Listening..."));
             try {
-                    Socket accepted = serverSocket.accept();
+                Socket accepted = serverSocket.accept();
                 ClientHandler clientHandler = new ClientHandler(accepted);
                 Thread thread = new Thread(clientHandler);
                 thread.start();
